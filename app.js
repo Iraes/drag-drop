@@ -1,13 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
     const items = document.querySelectorAll('.item');
     const placeholders = document.querySelectorAll('.placeholder');
+    let dragItem;
 
     items.forEach(item => {
-        dragItem = item;
         item.draggable = "true";
         item.addEventListener('dragstart', dragstart)
         item.addEventListener('dragend', dragend)
-        return dragItem;
     });
 
     placeholders.forEach(placeholder => {
@@ -29,18 +28,15 @@ document.addEventListener('DOMContentLoaded', () => {
         event.target.classList.remove('hovered');
     };
 
-    function dragdrop(event) {
-        event.target.classList.remove('hovered');
-        event.target.append(dragItem);
-    };
-
-
-
-
     function dragstart(event) {
         event.target.classList.add('hold');
         setTimeout(() => event.target.classList.add('hide'), 0)
-        
+        dragItem = event.target;
+    };
+
+    function dragdrop(event) {
+        event.target.classList.remove('hovered');
+        event.target.append(dragItem);
     };
 
     function dragend(event) {
