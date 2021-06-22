@@ -30,13 +30,12 @@ body {
 }
 
 .item {
-  width: 150px;
-  height: 66px;
+  margin-bottom: .7rem;
+  padding: 0.8rem 1rem;
   border: 1px solid #eee;
   box-shadow: 4px 4px 9px rgba(198, 198, 198, 0.36);
   border-radius: 20px;
   background: #f7f6f7;
-  padding: 0.8rem 1rem;
   color: #828282;
   text-align: center;
   cursor: grab;
@@ -49,6 +48,16 @@ body {
 .placeholder {
   width: 150px;
   height: 66px;
+}
+
+.hold {
+  border: 3px solid #eee;
+}
+.hovered{
+  border-top: 2px solid #8ed7ed;
+}
+.hide {
+  display: none;
 }
 
 .start {
